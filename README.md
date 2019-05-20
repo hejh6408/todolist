@@ -37,3 +37,6 @@
 
 # 결과 출력 퍼블릭 DNS(IPv4)
 <http://ec2-18-216-126-43.us-east-2.compute.amazonaws.com:3000/todo>
+
+# 개인 블로그
+<https://hejh6408.tistory.com/>
