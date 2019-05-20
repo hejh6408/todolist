@@ -1,5 +1,5 @@
 # todolist
-my_first_todo_list
+-my_first_todo_list
 
 # 설치 방법
 - sudo apt-get update
