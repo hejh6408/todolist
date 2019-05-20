@@ -8,11 +8,11 @@
 - unzip -o todo.zip
 
 # 실행 방법
-1 압축을 해제하고 todo directory 로 이동후
+- 압축을 해제하고 todo directory 로 이동후
 
-2 nodemon index.js 
+- nodemon index.js 
 또는
-2 nohup node index.js &
+- nohup node index.js &
 명령어 실행
 
 # 결과 출력 퍼블릭 DNS(IPv4)
