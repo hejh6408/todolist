@@ -1,0 +1,79 @@
+<html lang="en" dir="ltr">
+<head>
+  <title>Todo</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="/assets/ajax.js"></script>
+  <link rel="stylesheet" href="/assets/style.css" type="text/css">
+</head>
+<body>
+  <!-- <h1>My Todo List</h1> -->
+  <div class="todo-table">
+    <form>
+      <input id="todo_name" type="text" name="name" placeholder="todo name" required>
+      <textarea id="content" name="content" rows="8" placeholder="Content"></textarea>
+      <h1>Priority</h1>
+      <div id="priority">
+        <input type="radio" id="radio1" name="prior" value=0>
+        <label for="radio1">LOW</label>
+        <input type="radio" id="radio2" name="prior" value=1 checked>
+        <label for="radio2">MIDDLE</label>
+        <input type="radio" id="radio3" name="prior" value=2>
+        <label for="radio3">HIGH</label>
+      </div>
+      <h1>Due Date</h1>
+      <input type="date" id="duedate" name="duedate">
+      <button type="submit">Add</button>
+    </form>
+    <h1>Expiredlist</h1>
+    <ul id="expiredlist" style="background-color: lime">
+    <% let arr = [[], [], []];
+       let today = new Date().toISOString() %>
+      <% for(let i = 0; i < todos.length; i++){ %>
+        <% if(todos[i].duedate.toISOString() < today){ %>
+          <li>
+            <div class="">
+              <span class="todolistname"><%= todos[i].name %></span>
+
+              <img class="del_img" src="/img/delete.png" alt="">
+              <img class="mod_img" src="/img/modify.png" alt="">
+              <% if(todos[i].iscomplete){ %>
+                <img class="chk_img" src="/img/mark.jpg" alt="" style="background-color: red">
+              <% }else{ %>
+                <img class="chk_img" src="/img/mark.jpg" alt="">
+              <% } %>
+              <img class="show_img" src="/img/glass.png" alt="">
+            </div>
+            <p class="todolistcontent"><%= todos[i].content %></p>
+          </li>
+      <% } else{
+      arr[todos[i].priority].push({name: todos[i].name, content: todos[i].content, iscomplete: todos[i].iscomplete});
+      }
+    } %>
+    </ul>
+    <h1>My Todo List</h1>
+    <ul id="todolist">
+
+      <% for(let i = 2; i >= 0; i--){
+          for(let j = 0; j < arr[i].length; j++){ %>
+          <li>
+            <div class="">
+              <span class="todolistname"><%= arr[i][j].name %></span>
+
+              <img class="del_img" src="/img/delete.png" alt="">
+              <img class="mod_img" src="/img/modify.png" alt="">
+              <% if(arr[i][j].iscomplete){ %>
+                <img class="chk_img" src="/img/mark.jpg" alt="" style="background-color: red">
+              <% }else{ %>
+                <img class="chk_img" src="/img/mark.jpg" alt="">
+              <% } %>
+              <img class="show_img" src="/img/glass.png" alt="">
+            </div>
+            <p class="todolistcontent"><%= arr[i][j].content %></p>
+          </li>
+      <% }
+      } %>
+    </ul>
+
+  </div>
+</body>
+</html>
