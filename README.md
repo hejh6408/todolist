@@ -4,6 +4,7 @@
 # 설치 환경
 - aws ec2
 - Ubuntu Server 18.04 LTS (HVM), SSD Volume Type - ami-0c55b159cbfafe1f0 (64비트 x86)(Ubuntu Server 18.04 LTS (HVM),EBS General Purpose (SSD) Volume Type. Support available from Canonical)
+- 나머지 인스턴스 생성시 옵션은 default 옵션
 - 인바운드 규칙: http, https, ssh, 모든 트래픽의 소스를 위치무관, 사용자 지정 tcp: 3000 위치무관
 
 # 개발 도구
