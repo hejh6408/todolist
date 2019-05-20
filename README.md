@@ -1,6 +1,15 @@
 # todolist
 - my_first_todo_list
 
+# 설치 환경
+- aws ec2
+- Ubuntu Server 18.04 LTS (HVM), SSD Volume Type - ami-0c55b159cbfafe1f0 (64비트 x86)(Ubuntu Server 18.04 LTS (HVM),EBS General Purpose (SSD) Volume Type. Support available from Canonical)
+- 인바운드 규칙: http, https, ssh, 모든 트래픽의 소스를 위치무관, 사용자 지정 tcp: 3000 위치무관
+
+# 개발 도구
+- nodejs and npm
+- mongodb
+
 # 설치 방법
 - sudo apt-get update
 - sudo apt-get install nodejs
